@@ -1,5 +1,8 @@
 
 // sample usage:   var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; gaussJordan(arr);
+var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; 
+gaussJordan(arr);
+
 function gaussJordan(arr) {
   console.log("start: ", arr);
 
@@ -19,7 +22,6 @@ function gaussJordan(arr) {
 
 
   while (h < m && k < n) {
-    history.push(arr.slice());
     // finding the max element of a pivot column
     var curmax = arr[h][k];
     var imax = h;
