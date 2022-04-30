@@ -23,7 +23,7 @@ function MatrixSizeInput(props) {
           const rows = parseInt(e.target.value);
 
           // if we only want matrix of size between 2 and 8
-          if (1 <= rows && rows <= 8) {
+          if (2 <= rows && rows <= 8) {
             props.setRow(rows);
           }
         }}
@@ -42,7 +42,7 @@ function MatrixSizeInput(props) {
           const cols = parseInt(e.target.value);
 
           // if we only want matrix of size between 2 and 8
-          if (1 <= cols && cols <= 8) {
+          if (2 <= cols && cols <= 8) {
             props.setCol(cols);
           }
         }}

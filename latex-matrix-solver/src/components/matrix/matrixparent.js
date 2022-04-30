@@ -20,13 +20,25 @@ function MatrixParent() {
     [0, 0],
   ]);
 
+  // REFMatrix is a 2d array
+  // setREFMatrix is a function that modifies this state
+  const [REFMatrix, setREFMatrix] = useState([
+    [0, 0],
+    [0, 0],
+  ]);
+
   // RENDER EXPECTED:
   //  MatrixSizeInput and MatrixInput with right props, + any other intermediary text
   //  (possibly) text box for the latex output
   return (
     <div>
       <MatrixSizeInput setRow={setRow} setCol={setCol} />
-      <MatrixInput row={row} col={col} setMatrix={setMatrix} />
+      <MatrixInput
+        row={row}
+        col={col}
+        setMatrix={setMatrix}
+        setREFMatrix={setREFMatrix}
+      />
     </div>
   );
 }
