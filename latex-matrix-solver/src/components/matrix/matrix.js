@@ -1,4 +1,5 @@
 import React from "react";
+
 function MatrixInput(props) {
   // PROPS EXPECTED
   // row: INT (number of rows to be rendered)
@@ -16,7 +17,43 @@ function MatrixInput(props) {
   }
   // row x col 2d array with all zeros for now as default value
 
-  return <div></div>;
+  // function that handles what happens when it is sumbitted
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let count = 0;
+    for (let i = 0; i < props.row; i++) {
+      for (let j = 0; j < props.col; j++) {
+        // If the floating point number cannot be parsed, we set 0 for this value
+        matrixInputGrid[i][j] = !isNaN(parseFloat(event.target[count].value))
+          ? parseFloat(event.target[count].value)
+          : 0;
+        count += 1;
+      }
+    }
+    props.setMatrix(matrixInputGrid);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {matrixInputGrid.map((row, indexRow = 1) => {
+        return (
+          <div display="flex" key={indexRow}>
+            {row.map((item, indexColumn = 1) => {
+              return (
+                <input
+                  key={indexRow + " " + indexColumn}
+                  type="text"
+                  defaultValue={0}
+                  name={indexRow + "," + indexColumn}
+                />
+              );
+            })}
+          </div>
+        );
+      })}
+      <button>{"Enter"}</button>
+    </form>
+  );
 }
 
 export default MatrixInput;

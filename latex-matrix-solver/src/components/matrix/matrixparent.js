@@ -23,7 +23,12 @@ function MatrixParent() {
   // RENDER EXPECTED:
   //  MatrixSizeInput and MatrixInput with right props, + any other intermediary text
   //  (possibly) text box for the latex output
-  return <div></div>;
+  return (
+    <div>
+      <MatrixSizeInput setRow={setRow} setCol={setCol} />
+      <MatrixInput row={row} col={col} setMatrix={setMatrix} />
+    </div>
+  );
 }
 
 export default MatrixParent;
