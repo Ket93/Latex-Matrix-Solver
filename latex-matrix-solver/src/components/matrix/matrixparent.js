@@ -27,6 +27,10 @@ function MatrixParent() {
     [0, 0],
   ]);
 
+  // latexAnswer is a string (in latex)
+  // setLatexAnswer is a function that modifies this state
+  const [latexAnswer, setLatexAnswer] = useState("");
+
   // RENDER EXPECTED:
   //  MatrixSizeInput and MatrixInput with right props, + any other intermediary text
   //  (possibly) text box for the latex output
