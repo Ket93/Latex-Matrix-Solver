@@ -1,6 +1,9 @@
 import React from "react";
 import "./matrix.css";
 
+const gaussJordan = require("../../gaussjordan.js");
+const converter = require("../matrix/converter.js");
+
 function MatrixInput(props) {
   // PROPS EXPECTED
   // row: INT (number of rows to be rendered)
@@ -34,6 +37,8 @@ function MatrixInput(props) {
         count += 1;
       }
     }
+    props.setMatrix(matrixInputGrid);
+    matrixInputGrid = gaussJordan(matrixInputGrid);
     props.setMatrix(matrixInputGrid);
   };
 

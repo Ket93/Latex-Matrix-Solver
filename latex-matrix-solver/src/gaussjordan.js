@@ -71,6 +71,8 @@ function gaussJordan(arr) {
     }
   }
   console.log("RREF: ", arr);
+
+  return arr;
 }
 
 function rowScale(row, scale) {
