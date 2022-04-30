@@ -1,8 +1,8 @@
 import React from "react";
 import "./matrix.css";
 
-const gaussJordan = require("../../gaussjordan.js");
-const converter = require("../matrix/converter.js");
+import gaussJordan from "../../gaussjordan.js";
+import converter from "../matrix/converter.js";
 
 function MatrixInput(props) {
   // PROPS EXPECTED
@@ -21,6 +21,7 @@ function MatrixInput(props) {
   for (let i = 0; i < props.row; i++) {
     matrixInputGrid[i] = new Array(props.col).fill(0);
   }
+
   // row x col 2d array with all zeros for now as default value
 
   // function that handles what happens when it is sumbitted
@@ -40,11 +41,13 @@ function MatrixInput(props) {
     props.setMatrix(matrixInputGrid);
     matrixInputGrid = gaussJordan(matrixInputGrid);
     props.setMatrix(matrixInputGrid);
+    let latexString = converter(matrixInputGrid);
+    console.log(latexString);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="mainForm">
+      <form onSubmit={handleSubmit} id="GFG" className="mainForm">
         {matrixInputGrid.map((row, indexRow = 1) => {
           return (
             <div display="flex" key={indexRow}>
@@ -62,10 +65,11 @@ function MatrixInput(props) {
             </div>
           );
         })}
-        <a href="#" class="button">Calculate</a>
+        <button className="button" href="#">Calculate</button>
       </form>
     </>
   );
 }
+
 
 export default MatrixInput;

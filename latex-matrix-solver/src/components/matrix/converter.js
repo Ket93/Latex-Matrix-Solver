@@ -1,4 +1,4 @@
-function converter(data) {
+const converter = function (data) {
   let output = "\\begin{bmatrix}";
 
   for (let i = 0; i < data.length; ++i) {

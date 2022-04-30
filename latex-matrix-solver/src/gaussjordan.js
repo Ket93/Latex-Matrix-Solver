@@ -1,12 +1,4 @@
-// sample usage:   var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; gaussJordan(arr);
-var arr = [
-  [1, 1, 2, 3],
-  [5, 8, 13, 21],
-  [34, 55, 89, 144],
-];
-gaussJordan(arr);
-
-function gaussJordan(arr) {
+const gaussJordan = function (arr) {
   console.log("start: ", arr);
 
   // m is number of rows
@@ -93,5 +85,13 @@ function rowSpAdd(row1, row2, scale) {
   }
   return row1;
 }
+
+// sample usage:   var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; gaussJordan(arr);
+var arr = [
+  [1, 1, 2, 3],
+  [5, 8, 13, 21],
+  [34, 55, 89, 144],
+];
+gaussJordan(arr);
 
 export default gaussJordan;
