@@ -8,11 +8,11 @@ function MatrixParent() {
 
   // row is an INT
   // setRow is a function to modify this state
-  const [row, setRow] = useState(2);
+  const [row, setRow] = useState(4);
 
   // col is an INT
   // setRow is a function to modify this state
-  const [col, setCol] = useState(2);
+  const [col, setCol] = useState(4);
 
   // matrix is a 2D array (square)
   // setMatrix is a function that modifies this state
