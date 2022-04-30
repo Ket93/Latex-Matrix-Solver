@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import MatrixInput from "./matrix";
 import MatrixSizeInput from "./matrixsizeinput";
-import MatrixOutput from "./matrixout.js"
+import MatrixOutput from "./matrixout.js";
 
 function MatrixParent() {
   // STATES
 
   // row is an INT
   // setRow is a function to modify this state
-  const [row, setRow] = useState(2);
+  const [row, setRow] = useState(4);
 
   // col is an INT
   // setRow is a function to modify this state
-  const [col, setCol] = useState(2);
+  const [col, setCol] = useState(4);
 
   // matrix is a 2D array (square)
   // setMatrix is a function that modifies this state
@@ -37,18 +37,16 @@ function MatrixParent() {
   //  (possibly) text box for the latex output
   return (
     <div>
-      <MatrixSizeInput setRow={setRow} setCol={setCol} />
+      <MatrixSizeInput setRow={setRow} setCol={setCol} row={row} col={col} />
       <MatrixInput
         row={row}
         col={col}
+        matrix={matrix}
         setMatrix={setMatrix}
         setREFMatrix={setREFMatrix}
         setLatexAnswer={setLatexAnswer}
       />
-      <MatrixOutput
-        REFMatrix = {REFMatrix}
-        latexAnswer = {latexAnswer}
-      />
+      <MatrixOutput REFMatrix={REFMatrix} latexAnswer={latexAnswer} />
     </div>
   );
 }

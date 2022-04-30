@@ -5,6 +5,8 @@ function MatrixSizeInput(props) {
   // PROPS EXPECTED:
   // setRow(int) function that modifies the row state in MatrixParent
   // setCol(int) function that modifies the row state in MatrixParent
+  // row: INT
+  // col: INT
 
   // RENDER EXPECTED:
   // two input boxes that call setRow and setCol when the inputted number changed (and also within reasonable bounds)
@@ -20,7 +22,7 @@ function MatrixSizeInput(props) {
           max="8"
           type="number"
           name="rows"
-          defaultValue={2}
+          defaultValue={props.row}
           onChange={(e) => {
             const rows = parseInt(e.target.value);
 
@@ -39,7 +41,7 @@ function MatrixSizeInput(props) {
           max="8"
           type="number"
           name="cols"
-          defaultValue={2}
+          defaultValue={props.col}
           onChange={(e) => {
             const cols = parseInt(e.target.value);
 
