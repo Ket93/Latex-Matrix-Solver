@@ -27,7 +27,7 @@ function MatrixInput(props) {
   // set matrixInputGrid to the initial values
   for (let i = 0; i < props.row; i++) {
     for (let j = 0; j < props.col; j++) {
-      matrixInputGrid[i][j] = props.matrix[i][j];
+      matrixInputGrid[i][j] = 0;
     }
   }
 
