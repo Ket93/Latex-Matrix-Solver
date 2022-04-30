@@ -9,13 +9,6 @@ function MatrixSizeInput(props) {
   // RENDER EXPECTED:
   // two input boxes that call setRow and setCol when the inputted number changed (and also within reasonable bounds)
 
-  const form = document.getElementById("setDimensions");
-  const rowsData = form.elements["rows"];
-  const colsData = form.elements["cols"];
-
-  let currentRows = rowsData.value;
-  let currentCols = colsData.value;
-
   return (
     <form action="" id="setDimensions" className="sizeForm">
       <h2 className="sizeOfMatrix">Size Of Matrix:</h2>
