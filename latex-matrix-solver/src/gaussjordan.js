@@ -1,6 +1,9 @@
-
 // sample usage:   var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; gaussJordan(arr);
-var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; 
+var arr = [
+  [1, 1, 2, 3],
+  [5, 8, 13, 21],
+  [34, 55, 89, 144],
+];
 gaussJordan(arr);
 
 function gaussJordan(arr) {
@@ -16,10 +19,8 @@ function gaussJordan(arr) {
 
   //}
 
-
   var h = 0;
   var k = 0;
-
 
   while (h < m && k < n) {
     // finding the max element of a pivot column
@@ -46,7 +47,7 @@ function gaussJordan(arr) {
         arr[i][k] = 0;
         // do for all remaining elements in current row
         for (j = k + 1; j < n; j++) {
-          arr[i][j] = arr[i][j] - arr[h][j] * f
+          arr[i][j] = arr[i][j] - arr[h][j] * f;
         }
       }
       h += 1;
@@ -79,7 +80,7 @@ function rowScale(row, scale) {
       row[i] *= scale;
     }
   }
-  return row; 
+  return row;
 }
 
 // requires: rows are of the same length
@@ -90,3 +91,5 @@ function rowSpAdd(row1, row2, scale) {
   }
   return row1;
 }
+
+export default gaussJordan;
