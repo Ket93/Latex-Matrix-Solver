@@ -11,7 +11,7 @@ function MatrixSizeInput(props) {
 
   return (
     <>
-      <h1 className="title">Latex Matrix Solver</h1>
+      <h1 className="title">Latex Matrix RREF Solver</h1>
       <form action="" id="setDimensions" className="sizeForm">
         <h2 className="sizeOfMatrix">Size Of Matrix:</h2>
         <input

@@ -1,5 +1,5 @@
 const converter = function (data) {
-  let output = "\\begin{bmatrix}";
+  let output = "\\begin{bmatrix} \n";
 
   for (let i = 0; i < data.length; ++i) {
     for (let j = 0; j < data[0].length; ++j) {
@@ -10,7 +10,7 @@ const converter = function (data) {
         output += " &";
       } else {
         if (i != data.length - 1) {
-          output += " \\\\";
+          output += " \\\\ \n";
         }
       }
     }
