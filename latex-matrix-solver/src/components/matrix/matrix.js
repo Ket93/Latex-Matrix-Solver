@@ -7,6 +7,7 @@ function MatrixInput(props) {
   // col: INT (number of columns to be rendered)
   // setMatrix: function that takes in 2d array and sets this state for matrixParent component
   // setREFMatrix: funciton that takes in 2d array and sets REFMatrix state in matrixParent
+  // setLatexAnswer: function that takes in a string and sets this state in matrixParent
 
   // RENDER EXPECTED
   //  grid of input boxes depending on row and column prop,

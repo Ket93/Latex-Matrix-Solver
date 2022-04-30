@@ -42,6 +42,7 @@ function MatrixParent() {
         col={col}
         setMatrix={setMatrix}
         setREFMatrix={setREFMatrix}
+        setLatexAnswer={setLatexAnswer}
       />
     </div>
   );
