@@ -9,6 +9,13 @@ function MatrixInput(props) {
   //  grid of input boxes depending on row and column prop,
   //  submit button that calls setMatrix with whatever in inputted into the input boxes
 
+  // matrixInputGrid[row][col]
+  let matrixInputGrid = new Array(props.row);
+  for (let i = 0; i < props.row; i++) {
+    matrixInputGrid[i] = new Array(props.col).fill(0);
+  }
+  // row x col 2d array with all zeros for now as default value
+
   return <div></div>;
 }
 

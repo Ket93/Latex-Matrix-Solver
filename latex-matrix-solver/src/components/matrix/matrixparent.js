@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-const MatrixSizeInput = require("matrixsizeinput.js");
+import MatrixInput from "./matrix";
+import MatrixSizeInput from "./matrixsizeinput";
 
 function MatrixParent() {
   // STATES
@@ -19,6 +20,9 @@ function MatrixParent() {
     [0, 0],
   ]);
 
+  // RENDER EXPECTED:
+  //  MatrixSizeInput and MatrixInput with right props, + any other intermediary text
+  //  (possibly) text box for the latex output
   return <div></div>;
 }
 
