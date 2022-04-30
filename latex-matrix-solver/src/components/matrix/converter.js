@@ -17,6 +17,7 @@ function converter(data) {
   }
 
   output += "\\end{bmatrix}";
+  return output;
 }
 
 export default converter;
