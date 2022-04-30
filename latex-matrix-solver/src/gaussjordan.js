@@ -1,74 +1,74 @@
-var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]];
-console.log("start: ", arr);
 
-var history = [];
+// sample usage:   var arr = [[1,1,2,3], [5,8,13,21], [34,55,89,144]]; gaussJordan(arr);
+function gaussJordan(arr) {
+  console.log("start: ", arr);
 
-// m is number of rows
-// n is number of columns
+  // m is number of rows
+  // n is number of columns
 
-const m = arr.length;
-const n = arr[0].length;
+  const m = arr.length;
+  const n = arr[0].length;
 
-//for (i = 1; i < n; i ++) {
+  //for (i = 1; i < n; i ++) {
 
-//}
-
-
-var h = 0;
-var k = 0;
+  //}
 
 
-while (h < m && k < n) {
-  history.push(arr.slice());
-  // finding the max element of a pivot column
-  var curmax = arr[h][k];
-  var imax = h;
-  for (i = h; i < m; i++) {
-    if (Math.abs(arr[i][k]) > curmax) {
-      curmax = Math.abs(arr[i][k]);
-      imax = i;
-    }
-  }
-  if (curmax == 0) {
-    k += 1;
-  } else {
-    // swap rows
-    var temp = arr[h];
-    arr[h] = arr[imax];
-    arr[imax] = temp;
+  var h = 0;
+  var k = 0;
 
-    // do it for all rows below pivot
-    for (i = h + 1; i < m; i++) {
-      f = arr[i][k] / arr[h][k];
-      // fill with zeroes the lower part of pivot column
-      arr[i][k] = 0;
-      // do for all remaining elements in current row
-      for (j = k + 1; j < n; j++) {
-        arr[i][j] = arr[i][j] - arr[h][j] * f
+
+  while (h < m && k < n) {
+    history.push(arr.slice());
+    // finding the max element of a pivot column
+    var curmax = arr[h][k];
+    var imax = h;
+    for (i = h; i < m; i++) {
+      if (Math.abs(arr[i][k]) > curmax) {
+        curmax = Math.abs(arr[i][k]);
+        imax = i;
       }
     }
-    h += 1;
-    k += 1;
-  }
-}
-console.log("REF: ", arr);
+    if (curmax == 0) {
+      k += 1;
+    } else {
+      // swap rows
+      var temp = arr[h];
+      arr[h] = arr[imax];
+      arr[imax] = temp;
 
-// converting to rref via back substitution
-
-for (row = m - 1; row >= 0; row--) {
-  for (col = 0; col < n; col++) {
-    if (arr[row][col] != 0) {
-      arr[row] = rowScale(arr[row], 1 / arr[row][col]);
-      // for all the rows "above" the current row
-      for (r = row - 1; r >= 0; r--) {
-        arr[r] = rowSpAdd(arr[r], arr[row], -1 * arr[r][col]);
+      // do it for all rows below pivot
+      for (i = h + 1; i < m; i++) {
+        f = arr[i][k] / arr[h][k];
+        // fill with zeroes the lower part of pivot column
+        arr[i][k] = 0;
+        // do for all remaining elements in current row
+        for (j = k + 1; j < n; j++) {
+          arr[i][j] = arr[i][j] - arr[h][j] * f
+        }
       }
-      break;
+      h += 1;
+      k += 1;
     }
   }
-}
-console.log("RREF: ", arr);
+  console.log("REF: ", arr);
 
+  // converting to rref via back substitution
+
+  for (row = m - 1; row >= 0; row--) {
+    for (col = 0; col < n; col++) {
+      if (arr[row][col] != 0) {
+        arr[row] = rowScale(arr[row], 1 / arr[row][col]);
+        // for all the rows "above" the current row
+        for (r = row - 1; r >= 0; r--) {
+          arr[r] = rowSpAdd(arr[r], arr[row], -1 * arr[r][col]);
+        }
+        break;
+      }
+    }
+  }
+  console.log("RREF: ", arr);
+}
 
 function rowScale(row, scale) {
   const len = row.length;
