@@ -26,7 +26,7 @@ function gaussJordan(arr) {
     // finding the max element of a pivot column
     var curmax = arr[h][k];
     var imax = h;
-    for (i = h; i < m; i++) {
+    for (let i = h; i < m; i++) {
       if (Math.abs(arr[i][k]) > curmax) {
         curmax = Math.abs(arr[i][k]);
         imax = i;
@@ -41,12 +41,12 @@ function gaussJordan(arr) {
       arr[imax] = temp;
 
       // do it for all rows below pivot
-      for (i = h + 1; i < m; i++) {
-        f = arr[i][k] / arr[h][k];
+      for (let i = h + 1; i < m; i++) {
+        let f = arr[i][k] / arr[h][k];
         // fill with zeroes the lower part of pivot column
         arr[i][k] = 0;
         // do for all remaining elements in current row
-        for (j = k + 1; j < n; j++) {
+        for (let j = k + 1; j < n; j++) {
           arr[i][j] = arr[i][j] - arr[h][j] * f;
         }
       }
@@ -58,12 +58,12 @@ function gaussJordan(arr) {
 
   // converting to rref via back substitution
 
-  for (row = m - 1; row >= 0; row--) {
-    for (col = 0; col < n; col++) {
+  for (let row = m - 1; row >= 0; row--) {
+    for (let col = 0; col < n; col++) {
       if (arr[row][col] != 0) {
         arr[row] = rowScale(arr[row], 1 / arr[row][col]);
         // for all the rows "above" the current row
-        for (r = row - 1; r >= 0; r--) {
+        for (let r = row - 1; r >= 0; r--) {
           arr[r] = rowSpAdd(arr[r], arr[row], -1 * arr[r][col]);
         }
         break;
@@ -75,7 +75,7 @@ function gaussJordan(arr) {
 
 function rowScale(row, scale) {
   const len = row.length;
-  for (i = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     if (row[i] != 0) {
       row[i] *= scale;
     }
@@ -86,7 +86,7 @@ function rowScale(row, scale) {
 // requires: rows are of the same length
 function rowSpAdd(row1, row2, scale) {
   const len = row1.length;
-  for (i = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     row1[i] = row1[i] + scale * row2[i];
   }
   return row1;

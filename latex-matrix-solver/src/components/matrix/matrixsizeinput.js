@@ -1,6 +1,8 @@
 import React from "react";
 import "./matrixsizeinput.css";
 
+const gaussJordan = require("../../gaussjordan.js");
+
 function MatrixSizeInput(props) {
   // PROPS EXPECTED:
   // setRow(int) function that modifies the row state in MatrixParent
