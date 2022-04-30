@@ -18,6 +18,7 @@ function MatrixInput(props) {
   // row x col 2d array with all zeros for now as default value
 
   // function that handles what happens when it is sumbitted
+  //  sets matrixInputGrid to the correct values, then sets the state
   const handleSubmit = (event) => {
     event.preventDefault();
     let count = 0;
