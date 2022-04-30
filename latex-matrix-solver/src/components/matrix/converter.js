@@ -10,13 +10,13 @@ const converter = function (data) {
         output += " &";
       } else {
         if (i != data.length - 1) {
-          output += "\\\\";
+          output += " \\\\";
         }
       }
     }
   }
 
-  output += "\\end{bmatrix}";
+  output += " \\end{bmatrix}";
   return output;
 }
 

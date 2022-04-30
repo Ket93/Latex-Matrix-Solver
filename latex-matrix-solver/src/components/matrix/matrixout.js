@@ -1,13 +1,10 @@
 import React from "react";
 
 function MatrixOutput(props) {
-  console.log(props.REFMatrix);
 
-  const grid2 = props.REFMatrix;
+  const grid = props.REFMatrix;
 
-  const grid = [[1,2,3,4], [1,2,3,4], [5,4,2,6]];
-
-  return(
+  return (
     <div>
       <table>
         <tbody>
@@ -19,7 +16,7 @@ function MatrixOutput(props) {
                     <td>{item2}</td>
                   );
                 })
-              }
+                }
               </tr>
             );
           })}

@@ -40,9 +40,9 @@ function MatrixInput(props) {
     }
     props.setMatrix(matrixInputGrid);
     matrixInputGrid = gaussJordan(matrixInputGrid);
-    props.setMatrix(matrixInputGrid);
+    props.setREFMatrix(matrixInputGrid);
     let latexString = converter(matrixInputGrid);
-    console.log(latexString);
+    props.setLatexAnswer(latexString);
   };
 
   return (
