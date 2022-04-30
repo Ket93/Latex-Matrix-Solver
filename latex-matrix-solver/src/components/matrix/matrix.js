@@ -38,25 +38,28 @@ function MatrixInput(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mainForm">
-      {matrixInputGrid.map((row, indexRow = 1) => {
-        return (
-          <div display="flex" key={indexRow}>
-            {row.map((item, indexColumn = 1) => {
-              return (
-                <input
-                  key={indexRow + " " + indexColumn}
-                  type="text"
-                  defaultValue={0}
-                  name={indexRow + "," + indexColumn}
-                />
-              );
-            })}
-          </div>
-        );
-      })}
-      <button>{"Enter"}</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="mainForm">
+        {matrixInputGrid.map((row, indexRow = 1) => {
+          return (
+            <div display="flex" key={indexRow}>
+              {row.map((item, indexColumn = 1) => {
+                return (
+                  <input
+                    className="matrixInput"
+                    key={indexRow + " " + indexColumn}
+                    type="text"
+                    defaultValue={0}
+                    name={indexRow + "," + indexColumn}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
+        <a href="#" class="button">Calculate</a>
+      </form>
+    </>
   );
 }
 
