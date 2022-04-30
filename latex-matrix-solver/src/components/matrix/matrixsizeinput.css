@@ -1,0 +1,26 @@
+.sizeForm {
+    margin: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.sizeOfMatrix {
+    margin-right: 50px;
+}
+
+.rowsInput {
+    text-align: center;
+    height: 25px;
+    width: 160px;
+}
+
+.colsInput {
+    text-align: center;
+    height: 25px;
+    width: 160px;
+}
+
+.X {
+    margin: 30px;
+}

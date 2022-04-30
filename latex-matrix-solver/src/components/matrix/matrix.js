@@ -1,4 +1,5 @@
 import React from "react";
+import "./matrix.css";
 
 function MatrixInput(props) {
   // PROPS EXPECTED
@@ -35,7 +36,7 @@ function MatrixInput(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mainForm">
       {matrixInputGrid.map((row, indexRow = 1) => {
         return (
           <div display="flex" key={indexRow}>

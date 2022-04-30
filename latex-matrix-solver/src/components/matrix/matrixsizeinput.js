@@ -1,4 +1,5 @@
 import React from "react";
+import "./matrixsizeinput.css";
 
 function MatrixSizeInput(props) {
   // PROPS EXPECTED:
@@ -8,18 +9,20 @@ function MatrixSizeInput(props) {
   // RENDER EXPECTED:
   // two input boxes that call setRow and setCol when the inputted number changed (and also within reasonable bounds)
 
-  /*
   const form = document.getElementById("setDimensions");
   const rowsData = form.elements["rows"];
   const colsData = form.elements["cols"];
 
   let currentRows = rowsData.value;
   let currentCols = colsData.value;
-  */
 
   return (
-    <form action="" id="setDimensions">
+    <form action="" id="setDimensions" className="sizeForm">
+      <h2 className="sizeOfMatrix">Size Of Matrix:</h2>
       <input
+        className="rowsInput"
+        min="2"
+        max="8"
         type="number"
         name="rows"
         defaultValue={2}
@@ -33,7 +36,12 @@ function MatrixSizeInput(props) {
         }}
       />
 
+      <h2 className="X">X</h2>
+
       <input
+        className="colsInput"
+        min="2"
+        max="8"
         type="number"
         name="cols"
         defaultValue={2}
