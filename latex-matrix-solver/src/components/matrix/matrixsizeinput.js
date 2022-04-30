@@ -5,6 +5,8 @@ function MatrixSizeInput(props) {
   // PROPS EXPECTED:
   // setRow(int) function that modifies the row state in MatrixParent
   // setCol(int) function that modifies the row state in MatrixParent
+  // row: INT
+  // col: INT
 
   // RENDER EXPECTED:
   // two input boxes that call setRow and setCol when the inputted number changed (and also within reasonable bounds)

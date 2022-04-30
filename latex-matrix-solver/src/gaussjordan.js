@@ -65,7 +65,7 @@ const gaussJordan = function (arr) {
   console.log("RREF: ", arr);
 
   return arr;
-}
+};
 
 function rowScale(row, scale) {
   const len = row.length;

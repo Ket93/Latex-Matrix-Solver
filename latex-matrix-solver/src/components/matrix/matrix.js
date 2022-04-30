@@ -8,6 +8,7 @@ function MatrixInput(props) {
   // PROPS EXPECTED
   // row: INT (number of rows to be rendered)
   // col: INT (number of columns to be rendered)
+  // matrix: 2d array of size row x col that is the "default"/inputted
   // setMatrix: function that takes in 2d array and sets this state for matrixParent component
   // setREFMatrix: funciton that takes in 2d array and sets REFMatrix state in matrixParent
   // setLatexAnswer: function that takes in a string and sets this state in matrixParent
@@ -65,11 +66,12 @@ function MatrixInput(props) {
             </div>
           );
         })}
-        <button className="button" href="#">Calculate</button>
+        <button className="button" href="#">
+          Calculate
+        </button>
       </form>
     </>
   );
 }
-
 
 export default MatrixInput;
