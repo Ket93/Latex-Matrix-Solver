@@ -17,10 +17,18 @@ function MatrixInput(props) {
   //  grid of input boxes depending on row and column prop,
   //  submit button that calls setMatrix with whatever in inputted into the input boxes
 
-  // matrixInputGrid[row][col]
+  // initialize empty matrix of row x col size
+  //  matrixInputGrid[row][col]
   let matrixInputGrid = new Array(props.row);
   for (let i = 0; i < props.row; i++) {
     matrixInputGrid[i] = new Array(props.col).fill(0);
+  }
+
+  // set matrixInputGrid to the initial values
+  for (let i = 0; i < props.row; i++) {
+    for (let j = 0; j < props.col; j++) {
+      matrixInputGrid[i][j] = props.matrix[i][j];
+    }
   }
 
   // row x col 2d array with all zeros for now as default value
@@ -58,7 +66,7 @@ function MatrixInput(props) {
                     className="matrixInput"
                     key={indexRow + " " + indexColumn}
                     type="text"
-                    defaultValue={0}
+                    defaultValue={item}
                     name={indexRow + "," + indexColumn}
                   />
                 );
