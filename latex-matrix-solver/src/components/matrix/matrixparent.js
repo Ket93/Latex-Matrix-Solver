@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MatrixInput from "./matrix";
 import MatrixSizeInput from "./matrixsizeinput";
+import MatrixOutput from "./matrixout.js"
 
 function MatrixParent() {
   // STATES
@@ -43,6 +44,10 @@ function MatrixParent() {
         setMatrix={setMatrix}
         setREFMatrix={setREFMatrix}
         setLatexAnswer={setLatexAnswer}
+      />
+      <MatrixOutput
+        REFMatrix = {REFMatrix}
+        latexAnswer = {latexAnswer}
       />
     </div>
   );
