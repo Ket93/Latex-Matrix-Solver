@@ -1,0 +1,39 @@
+.displayContainer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.outputHeading {
+    margin-right: 50px;
+}
+
+.tableBody {
+    text-align: center;
+    width: 250px;
+}
+
+.tableEntry {
+    padding: 15px 5px;
+}
+
+.latexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin-bottom: 100px;
+}
+
+.latexHeading {
+    margin-right: 50px;
+}
