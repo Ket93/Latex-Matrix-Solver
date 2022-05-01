@@ -3,6 +3,12 @@
   text-align: center;
 }
 
+.submitForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .latexInput {
   border-radius: 5px;
   text-align: left;
