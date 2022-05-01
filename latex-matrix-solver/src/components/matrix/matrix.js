@@ -25,6 +25,7 @@ function MatrixInput(props) {
   }
 
   // set matrixInputGrid to the initial values
+  //  dimensions of props.matrix may not correspond to row and col props, this gets fixed upon submission
   let actualRow = props.matrix.length;
   let actualCol = props.matrix[0].length;
 

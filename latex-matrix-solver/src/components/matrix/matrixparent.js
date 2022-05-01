@@ -17,8 +17,8 @@ function MatrixParent() {
   // matrix is a 2D array (square)
   // setMatrix is a function that modifies this state
   const [matrix, setMatrix] = useState([
-    [1, 2],
-    [3, 4],
+    [0, 0],
+    [0, 0],
   ]);
 
   // REFMatrix is a 2d array
