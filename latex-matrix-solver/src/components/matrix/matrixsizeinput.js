@@ -22,7 +22,7 @@ function MatrixSizeInput(props) {
           max="8"
           type="number"
           name="rows"
-          value={props.row}
+          defaultValue={props.row}
           onChange={(e) => {
             const rows = parseInt(e.target.value);
 
@@ -41,7 +41,7 @@ function MatrixSizeInput(props) {
           max="8"
           type="number"
           name="cols"
-          value={props.col}
+          defaultValue={props.col}
           onChange={(e) => {
             const cols = parseInt(e.target.value);
 

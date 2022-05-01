@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./matrix.css";
 
 import gaussJordan from "../../gaussjordan.js";
@@ -19,6 +20,7 @@ function MatrixInput(props) {
 
   // initialize empty matrix of row x col size
   //  matrixInputGrid[row][col]
+
   let matrixInputGrid = new Array(props.row);
   for (let i = 0; i < props.row; i++) {
     matrixInputGrid[i] = new Array(props.col).fill(0);
@@ -71,8 +73,7 @@ function MatrixInput(props) {
                     className="matrixInput"
                     key={indexRow + " " + indexColumn}
                     type="text"
-                    value={item}
-                    onChange={() => {}}
+                    defaultValue={item}
                     name={indexRow + "," + indexColumn}
                   />
                 );

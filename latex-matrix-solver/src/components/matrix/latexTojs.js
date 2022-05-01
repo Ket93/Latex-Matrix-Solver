@@ -1,7 +1,11 @@
 import React from "react";
 import "./latexTojs.css";
 
-const inp1 = "\begin{bmatrix} 1 & 2 & 4 \\ 6 & 4 & 12 \\ 5 & 1 & 0 end{bmatrix}";
+import gaussJordan from "../../gaussjordan";
+import converter from "./converter";
+
+const inp1 =
+  "\begin{bmatrix} 1 & 2 & 4 \\ 6 & 4 & 12 \\ 5 & 1 & 0 end{bmatrix}";
 function tojs(inp) {
   console.log(inp);
 
@@ -42,19 +46,29 @@ function LatexToJs(props) {
     event.preventDefault();
     console.log(event.target.str.value);
     var val = tojs(event.target.str.value);
+
+    /*
     props.setMatrix(val);
     props.setCol(val[0].length);
     props.setRow(val.length);
+    */
+
+    val = gaussJordan(val);
+    props.setREFMatrix(val);
+    let latexString = converter(val);
+    props.setLatexAnswer(latexString);
   };
 
   return (
     <div className="inputContainer">
       <form onSubmit={handleSubmit} className="submitForm" id="latexForm">
         <label className="latexLabel">Latex Input:</label>
-        <input type="text" name="str" className="latexInput"/>
+        <input type="text" name="str" className="latexInput" />
       </form>
       <div className="latexButton">
-        <button type="submit" form="latexForm">Submit</button>
+        <button type="submit" form="latexForm">
+          Submit
+        </button>
       </div>
     </div>
   );
