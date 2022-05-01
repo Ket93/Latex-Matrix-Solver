@@ -54,7 +54,7 @@ function LatexToJs(props) {
         <input type="text" name="str" className="latexInput"/>
       </form>
       <div className="latexButton">
-        <button type="submit" form="latexForm">Submit</button>
+        <button type="submit" form="latexForm" className="button">Submit</button>
       </div>
     </div>
   );
