@@ -47,13 +47,7 @@ function MatrixParent() {
         setREFMatrix={setREFMatrix}
         setLatexAnswer={setLatexAnswer}
       />
-      <LatexToJs
-        setMatrix={setMatrix}
-        setRow={setRow}
-        setCol={setCol}
-        setLatexAnswer={setLatexAnswer}
-        setREFMatrix={setREFMatrix}
-      />
+      <LatexToJs setLatexAnswer={setLatexAnswer} setREFMatrix={setREFMatrix} />
       <MatrixOutput REFMatrix={REFMatrix} latexAnswer={latexAnswer} />
     </div>
   );

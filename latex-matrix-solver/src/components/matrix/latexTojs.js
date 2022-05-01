@@ -47,12 +47,6 @@ function LatexToJs(props) {
     console.log(event.target.str.value);
     var val = tojs(event.target.str.value);
 
-    /*
-    props.setMatrix(val);
-    props.setCol(val[0].length);
-    props.setRow(val.length);
-    */
-
     val = gaussJordan(val);
     props.setREFMatrix(val);
     let latexString = converter(val);
@@ -66,7 +60,9 @@ function LatexToJs(props) {
         <input type="text" name="str" className="latexInput" />
       </form>
       <div className="latexButton">
-        <button type="submit" form="latexForm" className="button">Submit</button>
+        <button type="submit" form="latexForm" className="button">
+          Submit
+        </button>
       </div>
     </div>
   );
