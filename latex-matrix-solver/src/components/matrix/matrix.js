@@ -71,7 +71,8 @@ function MatrixInput(props) {
                     className="matrixInput"
                     key={indexRow + " " + indexColumn}
                     type="text"
-                    defaultValue={item}
+                    value={item}
+                    onChange={() => {}}
                     name={indexRow + "," + indexColumn}
                   />
                 );
