@@ -25,7 +25,7 @@ function tojs(inp) {
       // not a valid digit
       if (inp[i] == "\\" || inp[i] == "e") {
         if (!isNaN(pusharr[0]) && pusharr[0] !== " ") {
-          pusharr.push(parseInt(strcat.slice()));
+          pusharr.push(parseFloat(strcat.slice()));
           arr.push(pusharr.slice());
           strcat = "";
           pusharr = [];
