@@ -7,6 +7,7 @@ import converter from "./converter";
 const inp1 =
   "\begin{bmatrix} 1 & 2 & 4 \\ 6 & 4 & 12 \\ 5 & 1 & 0 end{bmatrix}";
 function tojs(inp) {
+  /*
   console.log(inp);
 
   var arr = [];
@@ -39,12 +40,25 @@ function tojs(inp) {
   }
   console.log(arr);
   return arr;
+  */
+  //console.log(inp);
+  var arr = [];
+  var pusharr = [];
+  var strcat = "";
+  inp = inp.substring(15, inp.length - 13);
+  //console.log(inp);
+  arr = inp.split("\\\\");
+  arr = arr.map((x) => x.split("&"));
+  //console.log(arr);
+  arr = arr.map((x) => x.map((j) => parseFloat(j)));
+  console.log(arr);
+  return arr;
 }
 
 function LatexToJs(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.str.value);
+    // console.log(event.target.str.value);
     var val = tojs(event.target.str.value);
 
     val = gaussJordan(val);
