@@ -19,14 +19,14 @@ function tojs(inp) {
     } else { // not a valid digit
       if (inp[i] == "\\" || inp[i] == "e") {
         if (!isNaN(pusharr[0]) && pusharr[0] !== " ") {
-          pusharr.push(strcat.slice());
+          pusharr.push(int(strcat.slice()));
           arr.push(pusharr.slice());
           strcat = "";
           pusharr = [];
         }
       } 
       if (inp[i] == "&") {
-        pusharr.push(strcat.slice());
+        pusharr.push(int(strcat.slice()));
         strcat = "";
       } 
     }
