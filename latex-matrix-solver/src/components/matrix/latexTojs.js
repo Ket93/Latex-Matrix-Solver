@@ -57,7 +57,7 @@ function LatexToJs(props) {
     <div className="inputContainer">
       <form onSubmit={handleSubmit} className="submitForm" id="latexForm">
         <label className="latexLabel">Latex Input:</label>
-        <input type="text" name="str" className="latexInput" />
+        <textarea type="text" name="str" className="latexInput" />
       </form>
       <div className="latexButton">
         <button type="submit" form="latexForm" className="button">
