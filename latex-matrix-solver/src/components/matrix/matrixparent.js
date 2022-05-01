@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MatrixInput from "./matrix";
 import MatrixSizeInput from "./matrixsizeinput";
 import MatrixOutput from "./matrixout.js";
+import LatexToJs from "./latexTojs";
 
 function MatrixParent() {
   // STATES
@@ -37,6 +38,7 @@ function MatrixParent() {
   //  (possibly) text box for the latex output
   return (
     <div>
+      <LatexToJs setMatrix={setMatrix} setRow={setRow} setCol = {setCol}/>
       <MatrixSizeInput setRow={setRow} setCol={setCol} row={row} col={col} />
       <MatrixInput
         row={row}
