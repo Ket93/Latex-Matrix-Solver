@@ -25,9 +25,13 @@ function MatrixInput(props) {
   }
 
   // set matrixInputGrid to the initial values
+  let actualRow = props.matrix.length;
+  let actualCol = props.matrix[0].length;
+
   for (let i = 0; i < props.row; i++) {
     for (let j = 0; j < props.col; j++) {
-      matrixInputGrid[i][j] = 0;
+      matrixInputGrid[i][j] =
+        i < actualRow && j < actualCol ? props.matrix[i][j] : 0;
     }
   }
 
