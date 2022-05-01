@@ -38,7 +38,6 @@ function MatrixParent() {
   //  (possibly) text box for the latex output
   return (
     <div>
-      <LatexToJs setMatrix={setMatrix} setRow={setRow} setCol = {setCol}/>
       <MatrixSizeInput setRow={setRow} setCol={setCol} row={row} col={col} />
       <MatrixInput
         row={row}
@@ -48,6 +47,7 @@ function MatrixParent() {
         setREFMatrix={setREFMatrix}
         setLatexAnswer={setLatexAnswer}
       />
+      <LatexToJs setMatrix={setMatrix} setRow={setRow} setCol = {setCol}/>
       <MatrixOutput REFMatrix={REFMatrix} latexAnswer={latexAnswer} />
     </div>
   );

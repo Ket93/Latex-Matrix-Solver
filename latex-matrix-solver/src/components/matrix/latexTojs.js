@@ -1,7 +1,7 @@
 import React from "react";
+import "./latexTojs.css";
 
-const inp1 =
-  "\begin{bmatrix} 1 & 0 & 0.423444976076555 \\ 0 & 1 & -0.043062200956937795 \\ 0 & 0 & 0 end{bmatrix}";
+const inp1 = "\begin{bmatrix} 1 & 2 & 4 \\ 6 & 4 & 12 \\ 5 & 1 & 0 end{bmatrix}";
 function tojs(inp) {
   console.log(inp);
 
@@ -48,11 +48,15 @@ function LatexToJs(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Latex Input:</label>
-      <input type="text" name="str" />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="inputContainer">
+      <form onSubmit={handleSubmit} className="submitForm" id="latexForm">
+        <label className="latexLabel">Latex Input:</label>
+        <input type="text" name="str" className="latexInput"/>
+      </form>
+      <div className="latexButton">
+        <button type="submit" form="latexForm">Submit</button>
+      </div>
+    </div>
   );
 }
 
